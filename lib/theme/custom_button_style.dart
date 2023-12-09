@@ -1,4 +1,3 @@
-import 'dart:ui';
 import 'package:bold_freelance/core/app_export.dart';
 import 'package:flutter/material.dart';
 

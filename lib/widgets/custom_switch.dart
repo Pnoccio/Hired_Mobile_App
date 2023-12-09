@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable, unnecessary_import
+
 import 'package:bold_freelance/core/app_export.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';

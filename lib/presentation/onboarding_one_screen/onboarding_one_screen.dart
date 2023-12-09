@@ -15,85 +15,84 @@ class OnboardingOneScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     mediaQueryData = MediaQuery.of(context);
-    return SafeArea(
-        child: Scaffold(
-            extendBody: true,
-            extendBodyBehindAppBar: true,
-            appBar: CustomAppBar(height: getVerticalSize(49), actions: [
-              AppbarSubtitle1(
-                  text: "Skip",
-                  margin: getMargin(left: 24, top: 13, right: 24, bottom: 13),
-                  onTap: () {
-                    onTapMediumlabelmedi(context);
-                  })
-            ]),
-            body: Container(
-                width: mediaQueryData.size.width,
-                height: mediaQueryData.size.height,
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage(ImageConstant.imgOnboardingone),
-                        fit: BoxFit.cover)),
-                child: Container(
-                    height: getVerticalSize(718),
-                    width: double.maxFinite,
-                    padding: getPadding(left: 24, right: 24),
-                    child: Stack(alignment: Alignment.bottomCenter, children: [
-                      CustomImageView(
-                          imagePath: ImageConstant.imgImage,
-                          height: getVerticalSize(361),
-                          width: getHorizontalSize(283),
-                          alignment: Alignment.topCenter),
-                      Align(
-                          alignment: Alignment.bottomCenter,
-                          child: Container(
-                              height: getVerticalSize(335),
-                              width: getHorizontalSize(327),
-                              margin: getMargin(bottom: 5),
-                              child: Stack(
-                                  alignment: Alignment.bottomCenter,
-                                  children: [
-                                    CarouselSlider.builder(
-                                        options: CarouselOptions(
-                                            height: getVerticalSize(335),
-                                            initialPage: 0,
-                                            autoPlay: true,
-                                            viewportFraction: 1.0,
-                                            enableInfiniteScroll: false,
-                                            scrollDirection: Axis.horizontal,
-                                            onPageChanged: (index, reason) {
-                                              sliderIndex = index;
-                                            }),
-                                        itemCount: 1,
-                                        itemBuilder:
-                                            (context, index, realIndex) {
-                                          return SliderthebestapItemWidget(
-                                              onTapLabel: () {
-                                            onTapLabel(context);
-                                          });
+    return Scaffold(
+        extendBody: true,
+        extendBodyBehindAppBar: true,
+        appBar: CustomAppBar(height: getVerticalSize(49), actions: [
+          AppbarSubtitle1(
+              text: "Skip",
+              margin: getMargin(left: 24, top: 13, right: 24, bottom: 13),
+              onTap: () {
+                onTapMediumlabelmedi(context);
+              })
+        ]),
+        body: Container(
+            width: mediaQueryData.size.width,
+            height: mediaQueryData.size.height,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(ImageConstant.imgOnboardingone),
+                    fit: BoxFit.cover)),
+            child: Container(
+                height: getVerticalSize(718),
+                width: double.maxFinite,
+                padding: getPadding(left: 24, right: 24),
+                child: Stack(alignment: Alignment.bottomCenter, children: [
+                  CustomImageView(
+                      imagePath: ImageConstant.imgImage,
+                      height: getVerticalSize(361),
+                      width: getHorizontalSize(283),
+                      alignment: Alignment.topCenter),
+                  Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Container(
+                          height: getVerticalSize(335),
+                          width: getHorizontalSize(327),
+                          margin: getMargin(bottom: 5),
+                          child: Stack(
+                              alignment: Alignment.bottomCenter,
+                              children: [
+                                CarouselSlider.builder(
+                                    options: CarouselOptions(
+                                        height: getVerticalSize(335),
+                                        initialPage: 0,
+                                        autoPlay: true,
+                                        viewportFraction: 1.0,
+                                        enableInfiniteScroll: false,
+                                        scrollDirection: Axis.horizontal,
+                                        onPageChanged: (index, reason) {
+                                          sliderIndex = index;
                                         }),
-                                    Align(
-                                        alignment: Alignment.bottomCenter,
-                                        child: Container(
-                                            height: getVerticalSize(10),
-                                            margin: getMargin(bottom: 112),
-                                            child: AnimatedSmoothIndicator(
-                                                activeIndex: sliderIndex,
-                                                count: 1,
-                                                axisDirection: Axis.horizontal,
-                                                effect: ScrollingDotsEffect(
-                                                    spacing: 12,
-                                                    activeDotColor: theme
-                                                        .colorScheme.primary,
-                                                    dotColor: theme
-                                                        .colorScheme.primary
-                                                        .withOpacity(0.41),
-                                                    dotHeight:
-                                                        getVerticalSize(10),
-                                                    dotWidth: getHorizontalSize(
-                                                        10)))))
-                                  ])))
-                    ])))));
+                                    itemCount: 1,
+                                    itemBuilder:
+                                        (context, index, realIndex) {
+                                      return SliderthebestapItemWidget(
+                                          onTapLabel: () {
+                                        onTapLabel(context);
+                                      });
+                                    }),
+                                Align(
+                                    alignment: Alignment.bottomCenter,
+                                    child: Container(
+                                        height: getVerticalSize(10),
+                                        margin: getMargin(bottom: 112),
+                                        child: AnimatedSmoothIndicator(
+                                            activeIndex: sliderIndex,
+                                            count: 1,
+                                            axisDirection: Axis.horizontal,
+                                            effect: ScrollingDotsEffect(
+                                                spacing: 12,
+                                                activeDotColor: theme
+                                                    .colorScheme.primary,
+                                                dotColor: theme
+                                                    .colorScheme.primary
+                                                    .withOpacity(0.41),
+                                                dotHeight:
+                                                    getVerticalSize(10),
+                                                dotWidth: getHorizontalSize(
+                                                    10)))))
+                              ])))
+                ]))));
   }
 
   onTapLabel(BuildContext context) {

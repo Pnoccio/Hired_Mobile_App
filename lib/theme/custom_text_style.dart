@@ -225,11 +225,6 @@ extension on TextStyle {
     );
   }
 
-  TextStyle get plusJakartaSans {
-    return copyWith(
-      fontFamily: 'Plus Jakarta Sans',
-    );
-  }
 
   TextStyle get poppins {
     return copyWith(
